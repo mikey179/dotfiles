@@ -11,4 +11,4 @@
 [push]
 	default = simple
 [core]
-	excludesfile = /Users/mikey/.gitignore_global
+	excludesfile = ~/.gitignore_global

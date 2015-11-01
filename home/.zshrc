@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-export PATH=$PATH:/Users/mikey/bin
+export PATH=$PATH:$HOME/bin
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,6 +52,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 export PHPBREW_SET_PROMPT=1
-source /Users/mikey/.phpbrew/bashrc
+source $HOME/.phpbrew/bashrc
 
 
