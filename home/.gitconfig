@@ -1,0 +1,14 @@
+[user]
+	name = mikey179
+	email = mikey@stubbles.net
+
+[alias]
+	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+        lol = "log --graph --oneline --decorate"
+
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[core]
+	excludesfile = /Users/mikey/.gitignore_global
