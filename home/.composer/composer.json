@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pyrech/composer-changelogs": "^1.2"
+    }
+}
