@@ -3,6 +3,11 @@ ZSH=$HOME/.oh-my-zsh
 
 export PATH=$PATH:$HOME/bin
 
+if [ -d "$HOME/.jenv" ]; then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -42,7 +47,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git composer)
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
@@ -53,5 +58,10 @@ source $ZSH/oh-my-zsh.sh
 
 #export PHPBREW_SET_PROMPT=1
 source $HOME/.phpbrew/bashrc
+
+if [ -e "$HOME/.aliases" ]; then
+    source ~/.aliases
+fi
+
 
 
