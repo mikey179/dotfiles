@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export PHPBREW_SET_PROMPT=1
+#export PHPBREW_SET_PROMPT=1
 source $HOME/.phpbrew/bashrc
 
 
