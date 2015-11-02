@@ -63,5 +63,5 @@ if [ -e "$HOME/.aliases" ]; then
     source ~/.aliases
 fi
 
-
+alias phpunit="vendor/bin/phpunit"
 
