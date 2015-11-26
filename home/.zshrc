@@ -57,7 +57,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 #export PHPBREW_SET_PROMPT=1
-source $HOME/.phpbrew/bashrc
+if [ -e $HOME/.phpbrew/bashrc ]; then
+    source $HOME/.phpbrew/bashrc
+fi
 
 if [ -e "$HOME/.aliases" ]; then
     source ~/.aliases
