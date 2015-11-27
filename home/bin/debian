@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -z $PROVIDER ]; then
+    PROVIDER="mikey179"
+fi
+
+HOSTNAME=$(basename $(pwd))
+docker-machine ssh default -A -t "docker run -it --rm -v \$SSH_AUTH_SOCK:/root/ssh-agent -e SSH_AUTH_SOCK=/root/ssh-agent -h $HOSTNAME -v $(pwd):/root/workspace -v $HOME/.ssh/known_hosts:/root/.ssh/known_hosts $PROVIDER/instant-debian"
