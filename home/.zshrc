@@ -65,5 +65,10 @@ if [ -e "$HOME/.aliases" ]; then
     source ~/.aliases
 fi
 
+if [ -e "$HOME/.zshrc_work" ]; then
+   source $HOME/.zshrc_work
+fi
+
 alias phpunit="vendor/bin/phpunit"
+
 
