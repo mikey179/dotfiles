@@ -71,4 +71,13 @@ fi
 
 alias phpunit="vendor/bin/phpunit"
 
+cdp () {
+
+  TEMP_PWD=`pwd`
+  while ! [ -d .git ]; do
+  cd ..
+  done
+  OLDPWD=$TEMP_PWD
+
+}
 
