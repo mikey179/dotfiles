@@ -81,3 +81,6 @@ cdp () {
 
 }
 
+
+# added by travis gem
+[ -f /Users/fkleine/.travis/travis.sh ] && source /Users/fkleine/.travis/travis.sh
