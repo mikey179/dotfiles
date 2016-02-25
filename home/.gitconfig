@@ -31,3 +31,7 @@
   changed = green
   untracked = cyan
 
+[branch]
+	autosetuprebase = always
+[rerere]
+	enabled = true
