@@ -70,6 +70,7 @@ if [ -e "$HOME/.zshrc_work" ]; then
 fi
 
 alias phpunit="vendor/bin/phpunit"
+alias a="atom ."
 
 cdp () {
 
