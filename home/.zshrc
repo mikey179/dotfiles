@@ -70,7 +70,7 @@ if [ -e "$HOME/.zshrc_work" ]; then
 fi
 
 alias phpunit="vendor/bin/phpunit"
-alias hhvmunit="docker run --rm -v $(pwd):/app hhvm/hhvm /bin/bash -c \"cd /app && hhvm vendor/bin/phpunit\""
+alias hhvmunit="docker run --rm -v \$(pwd):/app hhvm/hhvm /bin/bash -c \"cd /app && hhvm vendor/bin/phpunit\""
 alias a="atom ."
 
 cdp () {
