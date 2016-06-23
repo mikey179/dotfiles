@@ -85,4 +85,5 @@ cdp () {
 export GOPATH=$HOME/workspace/go
 
 # added by travis gem
-[ -f /Users/fkleine/.travis/travis.sh ] && source /Users/fkleine/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
