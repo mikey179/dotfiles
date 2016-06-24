@@ -1,11 +1,19 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin
+export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 if [ -d "$HOME/.jenv" ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
+fi
+
+if [ -d "/Applications/Postgres.app/Contents/Versions/9.4/bin" ]; then
+    export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+fi
+
+if [ -d "$HOME/.rvm/bin" ]; then
+    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
 
 # Set name of the theme to load.
@@ -87,3 +95,4 @@ export GOPATH=$HOME/workspace/go
 
 # added by travis gem
 [ -f /Users/fkleine/.travis/travis.sh ] && source /Users/fkleine/.travis/travis.sh
+
