@@ -78,7 +78,7 @@ if [ -e "$HOME/.zshrc_work" ]; then
 fi
 
 alias phpunit="vendor/bin/phpunit"
-alias hhvmunit="docker run --rm -v $(pwd):/app hhvm/hhvm /bin/bash -c \"cd /app && hhvm vendor/bin/phpunit\""
+alias hhvmunit="docker run --rm -v \$(pwd):/app hhvm/hhvm /bin/bash -c \"cd /app && hhvm vendor/bin/phpunit\""
 alias a="atom ."
 
 cdp () {
@@ -94,5 +94,5 @@ cdp () {
 export GOPATH=$HOME/workspace/go
 
 # added by travis gem
-[ -f /Users/fkleine/.travis/travis.sh ] && source /Users/fkleine/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
