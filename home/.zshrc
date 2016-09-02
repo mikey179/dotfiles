@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin
+export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin
 
 if [ -d "$HOME/.jenv" ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
