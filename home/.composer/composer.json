@@ -1,6 +1,6 @@
 {
     "require": {
         "pyrech/composer-changelogs": "^1.5",
-        "xp-framework/core": "7.4.0"
+        "xp-framework/core": "^8.0"
     }
 }
