@@ -1,0 +1,29 @@
+#!/bin/tcsh
+# Adapted from http://furbo.org/2014/09/03/the-terminal/
+set cmd = 'ps axo pid,ppid,user,%cpu,%mem,command'
+if ("$1" == "") then
+  $cmd
+else if ("$1" == "-h" || "$1" == "--help") then
+  echo "Usage: psc [options] [command]"
+  echo ""
+  echo "List all processes. If command is specified, list all processes of this command only."
+  echo ""
+  echo "Options:"
+  echo "  -c Perform case-sensitive search"
+  echo ""
+else 
+  if ("$1" == "-c") then
+    set greparg = ''
+    if ("$2" == "") then
+      echo "Used -c option but did not provide search argument"
+      exit 1
+    endif
+
+    set search = $2
+  else
+    set greparg = '-i '
+    set search = $1
+  endif
+
+  $cmd | grep $greparg"$search" | grep -v "grep $greparg$search" | grep -v "bin/psc"
+endif
