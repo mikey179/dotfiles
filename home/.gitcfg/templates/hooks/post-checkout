@@ -1,0 +1,3 @@
+#!/bin/bash
+
+~/.gitcfg/scripts/fix-committer-info.sh

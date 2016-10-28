@@ -1,7 +1,8 @@
+[init]
+	templatedir = ~/.gitcfg/templates
+
 [user]
-	name = mikey179
-	email = mikey@bovigo.org
-	signingkey = F6D84238EF89E1D0B7B2CE4C34A8AD190E5304FA
+	name = Frank Kleine
 
 [alias]
 	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
