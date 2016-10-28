@@ -4,7 +4,7 @@ USER=$(git config --local --get user.name)
 ADDR=$(git config --local --get user.email)
 if [ -n "$USER" -a -n "$ADDR" ]; then
     echo "[fix-committer-info] Identity information already set, not updating"
-	exit 0
+    exit 0
 fi
 
 extract_hostname() {
@@ -25,7 +25,7 @@ if [ -a ~/.gitcfg/users/$GIT_HOSTNAME.sh ]; then
     . ~/.gitcfg/users/$GIT_HOSTNAME.sh
 else
     echo "[fix-committer-info] No user file found for host ${GIT_HOSTNAME}, falling back to default"
-	git config --local user.name "Frank Kleine"
-	git config --local user.email "mikey@bovigo.org"
+    git config --local user.name "Frank Kleine"
+    git config --local user.email "mikey@bovigo.org"
     git config --local user.signingkey "F6D84238EF89E1D0B7B2CE4C34A8AD190E5304FA"
 fi
