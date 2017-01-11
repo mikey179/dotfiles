@@ -6,7 +6,8 @@
 
 [alias]
 	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
-        lol = "log --graph --oneline --decorate"
+	lol = "log --graph --oneline --decorate"
+	statzs = "status"
 
 [credential]
 	helper = osxkeychain
