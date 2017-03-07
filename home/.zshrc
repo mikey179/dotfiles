@@ -1,6 +1,3 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
 export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin
 
 if [ -d "$HOME/.jenv" ]; then
