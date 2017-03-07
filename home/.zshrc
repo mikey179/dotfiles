@@ -117,11 +117,14 @@ export GOPATH=$HOME/workspace/go
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # see http://frantic.im/notify-on-completion
-function f_notifyme {
-  LAST_EXIT_CODE=$?
-  CMD=$(fc -ln -1)
-  # No point in waiting for the command to complete
-  $HOME/scripts/notifyme "$CMD" "$LAST_EXIT_CODE" &
-}
 
-export PS1='$(f_notifyme)'$PS1
+if [ $(uname) = "Darwin" ]; then
+  function f_notifyme {
+    LAST_EXIT_CODE=$?
+    CMD=$(fc -ln -1)
+    # No point in waiting for the command to complete
+    $HOME/scripts/notifyme "$CMD" "$LAST_EXIT_CODE" &
+  }
+
+  export PS1='$(f_notifyme)'$PS1
+fi
