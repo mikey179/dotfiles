@@ -97,7 +97,6 @@ if [ -e "$HOME/.zshrc_work" ]; then
 fi
 
 alias phpunit="vendor/bin/phpunit"
-alias hhvmunit="docker run --rm -v \$(pwd):/app hhvm/hhvm /bin/bash -c \"cd /app && hhvm -d hhvm.php7.scalar_types=true vendor/bin/phpunit\""
 alias coverage="open docs/coverage/index.html"
 alias a="atom ."
 
