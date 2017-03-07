@@ -55,7 +55,26 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer docker docker-compose)
+#plugins=(git composer docker docker-compose)
+
+source $HOME/.homesick/repos/zgen/zgen.zsh
+if ! zgen saved; then
+  echo "Creating zgen save ..."
+
+  zgen oh-my-zsh
+
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/composer
+  zgen oh-my-zsh plugins/colored-man-pages
+  zgen oh-my-zsh plugins/docker
+  zgen oh-my-zsh plugins/docker-compose
+
+  zgen load StackExchange/blackbox
+  zgen load zsh-users/zsh-syntax-highlighting
+
+  zgen save
+fi
+
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
@@ -106,6 +125,3 @@ function f_notifyme {
 }
 
 export PS1='$(f_notifyme)'$PS1
-
-
-

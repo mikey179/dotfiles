@@ -8,8 +8,8 @@ fi
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 
 ### Deploy dotfiles ###
+homeshick clone --batch https://github.com/tarjoilija/zgen.git
 homeshick clone --batch https://github.com/mikey179/dotfiles.git
 
 ### Link it all to $HOME ###
 homeshick link
-
