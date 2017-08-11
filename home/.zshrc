@@ -96,6 +96,7 @@ fi
 alias phpunit="vendor/bin/phpunit"
 alias coverage="open docs/coverage/index.html"
 alias a="atom ."
+alias c="code ."
 
 cdp () {
 
