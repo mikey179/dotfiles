@@ -1,4 +1,5 @@
 export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin
+export GO111MODULE=on
 
 if [ -d "$HOME/.jenv" ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
@@ -7,10 +8,6 @@ fi
 
 if [ -d "/Applications/Postgres.app/Contents/Versions/9.4/bin" ]; then
     export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
-fi
-
-if [ -d "$HOME/.rvm/bin" ]; then
-    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
 
 # Set name of the theme to load.
@@ -80,11 +77,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-#export PHPBREW_SET_PROMPT=1
-if [ -e $HOME/.phpbrew/bashrc ]; then
-    source $HOME/.phpbrew/bashrc
-fi
-
 if [ -e "$HOME/.aliases" ]; then
     source ~/.aliases
 fi
@@ -113,15 +105,3 @@ export GOPATH=$HOME/workspace/go
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-# see http://frantic.im/notify-on-completion
-
-if [ $(uname) = "Darwin" ]; then
-  function f_notifyme {
-    LAST_EXIT_CODE=$?
-    CMD=$(fc -ln -1)
-    # No point in waiting for the command to complete
-    $HOME/scripts/notifyme "$CMD" "$LAST_EXIT_CODE" &
-  }
-
-  export PS1='$(f_notifyme)'$PS1
-fi
