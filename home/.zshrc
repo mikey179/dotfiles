@@ -1,4 +1,5 @@
 export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin
+export GOPATH=$HOME/workspace/go
 export GO111MODULE=on
 
 ZSH_THEME="robbyrussell"
@@ -30,11 +31,11 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 if [ -e "$HOME/.aliases" ]; then
-    source ~/.aliases
+  source ~/.aliases
 fi
 
 if [ -e "$HOME/.zshrc_work" ]; then
-   source $HOME/.zshrc_work
+  source $HOME/.zshrc_work
 fi
 
 alias phpunit="vendor/bin/phpunit"
@@ -42,17 +43,9 @@ alias coverage="open docs/coverage/index.html"
 alias c="code ."
 
 cdp () {
-
   TEMP_PWD=`pwd`
   while ! [ -d .git ]; do
   cd ..
   done
   OLDPWD=$TEMP_PWD
-
 }
-
-export GOPATH=$HOME/workspace/go
-
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
