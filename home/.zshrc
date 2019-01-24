@@ -41,6 +41,8 @@ fi
 alias phpunit="vendor/bin/phpunit"
 alias coverage="open docs/coverage/index.html"
 alias c="code ."
+# copy working directory to clipboard
+alias cwd='pwd | tr -d "\r\n" | pbcopy'
 
 cdp () {
   TEMP_PWD=`pwd`
