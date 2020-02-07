@@ -4,5 +4,4 @@ if [ -z $PROVIDER ]; then
 fi
 
 HOSTNAME=$(basename $(pwd))
-#docker run -it --rm -h $HOSTNAME -v $(pwd):/root/workspace -v $HOME/.ssh/known_hosts:/root/.ssh/known_hosts $PROVIDER/instant-debian
-docker-machine ssh default -A -t "docker run -it --rm -v \$SSH_AUTH_SOCK:/root/ssh-agent -e SSH_AUTH_SOCK=/root/ssh-agent -h $HOSTNAME -v $(pwd):/root/workspace -v $HOME/.ssh/known_hosts:/root/.ssh/known_hosts $PROVIDER/instant-debian"
+docker run -it --rm -h $HOSTNAME -v $(pwd):/root/workspace -v $HOME/.ssh/known_hosts:/root/.ssh/known_hosts $PROVIDER/instant-debian
