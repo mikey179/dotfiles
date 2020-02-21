@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/bin:$HOME/workspace/go/bin
+export PATH=/usr/local/bin:$PATH:$HOME/bin:$HOME/workspace/go/bin
 export GOPATH=$HOME/workspace/go
 export GO111MODULE=on
 export CDPATH=$HOME/workspace
