@@ -1,10 +1,14 @@
 #!/bin/bash
 
-USER=$(git config --local --get user.name)
-ADDR=$(git config --local --get user.email)
-if [ -n "$USER" -a -n "$ADDR" ]; then
-    echo "[fix-committer-info] Identity information already set, not updating"
-    exit 0
+if [ "$1" != "--force" ]; then
+    USER=$(git config --local --get user.name)
+    ADDR=$(git config --local --get user.email)
+    if [ -n "$USER" -a -n "$ADDR" ]; then
+        echo "[fix-committer-info] Identity information already set, not updating"
+        exit 0
+    fi
+else
+    echo "[fix-committer-info] Force: overwrite existing identity information"
 fi
 
 extract_hostname() {
