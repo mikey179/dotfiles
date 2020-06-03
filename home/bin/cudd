@@ -1,0 +1,3 @@
+#!/bin/bash
+
+jq -r '.["require-dev"] | keys[] | tostring' composer.json | xargs composer update --with-dependencies
