@@ -1,5 +1,6 @@
 [init]
 	templatedir = ~/.gitcfg/templates
+	defaultBranch = main
 
 [user]
 	name = Frank Kleine
