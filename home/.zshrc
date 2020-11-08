@@ -42,6 +42,7 @@ fi
 alias phpunit="vendor/bin/phpunit"
 alias coverage="open docs/coverage/index.html"
 alias c="code ."
+alias php8="docker run -it -v \"$PWD\":/usr/src/myapp -w /usr/src/myapp -v '/run/host-services/ssh-auth.sock:/ssh-auth.sock' -e 'SSH_AUTH_SOCK=/ssh-auth.sock' php-test:8.0.0RC3-cli bash"
 # copy working directory to clipboard
 alias cwd='pwd | tr -d "\r\n" | pbcopy'
 
