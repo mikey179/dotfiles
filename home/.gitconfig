@@ -47,3 +47,5 @@
 	enabled = true
 [commit]
 	gpgsign = true
+[pull]
+	rebase = true
