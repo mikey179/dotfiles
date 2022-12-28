@@ -47,22 +47,25 @@ alias cwd='pwd | tr -d "\r\n" | pbcopy'
 cdp () {
   TEMP_PWD=`pwd`
   while ! [ -d .git ]; do
-  cd ..
+    cd ..
   done
   OLDPWD=$TEMP_PWD
 }
 
 
-alias composer="docker run --rm --interactive --tty \
-  --volume $PWD:/app \
-  --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
-  --user $(id -u):$(id -g) \
-  arm64v8/composer:2"
+composer() {
+  docker run --rm --interactive --tty \
+    --volume ${PWD}:/app \
+    --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
+    --user $(id -u):$(id -g) \
+    arm64v8/composer:2 $@
+}
 
 php_container() {
   PHP_VERSION="$1"
   shift
-  docker run -it --rm -v "$PWD":/usr/src/myapp \
+  docker run -it --rm \
+    -v "$PWD":/usr/src/myapp \
     -w /usr/src/myapp arm64v8/php:$PHP_VERSION-cli $@
 }
 
@@ -72,5 +75,5 @@ alias php-8.0="php_container 8.0 bash"
 alias phpunit-8.0="php_container 8.0 vendor/bin/phpunit"
 alias php-8.1="php_container 8.1 bash"
 alias phpunit-8.1="php_container 8.1 vendor/bin/phpunit"
-alias php-8.2="php_container 8.2-rc bash"
-alias phpunit-8.2="php_container 8.2-rc vendor/bin/phpunit"
+alias php-8.2="php_container 8.2 bash"
+alias phpunit-8.2="php_container 8.2 vendor/bin/phpunit"
