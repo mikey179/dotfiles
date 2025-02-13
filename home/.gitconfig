@@ -1,5 +1,5 @@
 [init]
-	templatedir = ~/.gitcfg/templates
+	templateDir = ~/.gitcfg/templates
 	defaultBranch = main
 
 [user]
@@ -15,6 +15,8 @@
 	mc = !git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg
 	lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 	wip = for-each-ref --sort='authordate:iso8601' --count 20 --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+	gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
 
 [credential]
 	helper = osxkeychain
@@ -49,3 +51,7 @@
 	gpgsign = true
 [pull]
 	rebase = true
+[help]
+	autocorrect = prompt
+[log]
+	date = iso
