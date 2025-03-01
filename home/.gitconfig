@@ -6,7 +6,6 @@
 	name = Frank Kleine
 
 [alias]
-	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 	lol = "log --graph --oneline --decorate"
 	statzs = "status"
 	it = !git init && git commit -m “root” --allow-empty
@@ -22,6 +21,7 @@
 	helper = osxkeychain
 [push]
 	default = simple
+	autoSetupRemote = true
 [core]
 	excludesfile = ~/.gitignore_global
 
@@ -47,11 +47,24 @@
 	autosetuprebase = always
 [rerere]
 	enabled = true
+	autoupdate = true
 [commit]
 	gpgsign = true
+	verbose = true
 [pull]
 	rebase = true
 [help]
 	autocorrect = prompt
 [log]
 	date = iso
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[fetch]
+	prune = true
+[merge]
+	conflictstyle = zdiff3
